@@ -1,0 +1,41 @@
+{
+	"global": {
+		"toggle-theme": "Arrrgh!",
+		"toggle-lang": "Arrrrrrrr!"
+	},
+	"nav": {
+		"gallery": "Yarrrgh!",
+		"meteoriks": "Meteoarrrr!!!!",
+		"about": "Arrrgh!!"
+	},
+	"artwork": {
+		"platform": "{{platform}} executarrrrrrrgh !"
+	},
+	"badges": {
+		"meteorik-nominee": "Meteoarrrr!!!! {{meteorik-year}} Nominarrrrgh !",
+		"meteorik-winner": "Meteoarrrr!!!! {{meteorik-year}} Winnarrrrrrgh !"
+	},
+	"meteoriks": {
+		"what-are-meteoriks": "Arrr Meteoarrrr!!!!?",
+		"what-are-meteoriks-p1": "<a href=\"{{external-url-meteoriks}}\">The Meteoarrrr!!!!</a> Ye couldn't find the pointy end of yer sword, ye gutless, lily-livered whelp! ... Yo ho ho an' a bottle o' rum!",
+		"what-are-meteoriks-p2": "I'll send ye to Davy Jones, ye bilge-drinkin', scabby cur! ... Ahoy!",
+		"juror-application-open": "Me parrot has a smaller nose than ye, ye mangy, bilge-drinkin' halfwit! ... Arrrrgh!! {{current-year}} Meteoarrrr!!!! <a href=\"{{external-url-meteoriks-jurors}}\">Arrrr!</a>!",
+		"public-nominations-open": "I'll dance the hornpipe o'er yer grave, ye pestilent, yellow-bellied mongrel! ... Blimey! {{current-year}} Meteoarrrr!!!! Ye're as smart as a barrel of bilge, ye rum-thievin', ghastly scalawag! ... Hoist the Jolly Roger! <a href=\"{{external-url-pouet}}\">Pouët</a> arrr <a href=\"{{external-url-demozoo}}\">Demozoo</a>."
+	},
+	"about": {
+		"what-is-exegfx": "Arrrrgg Executarrrrr Grarrrrgggg ?",
+		"what-is-exegfx-p1": "I'll gut ye bow to stern, ye daft, lice-infested parrot! ... Blistering barnacles!",
+		"what-is-exegfx-p2": "Ye couldn't hit water if ye fell out of a boat, ye spineless, bilge-drinkin' sea bass! ... Land ho!",
+		"what-is-exegfx-p3": "Ye're toothless, chum-smellin' blaggart! ... Blast ye!",
+		"what-is-exe-dot-gfx": "Arrrrrr executable.graphics?",
+		"what-is-exe-dot-gfx-p1": "Ye're the worst pirate I ever seen, ye pox-faced, poxy idiot! ... Yarr!",
+		"what-is-exe-dot-gfx-p2": "I'll eat yer parrot an' drink yer rum, ye dreadful, pestilent blowfish! ... Shiver me timbers!",
+		"credit-curator": "This collection is curarrrrgh by yx.",
+		"credit-translators": "Localizarrrrrr {{translators}}."
+	},
+	"footer": {
+		"copyright-website": "Website © yx.",
+		"copyright-artworks": "All artworks © their respective authors.",
+		"copyright-pouet": "Pouët graphics © mandarine."
+	}
+}

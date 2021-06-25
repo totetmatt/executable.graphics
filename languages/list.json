@@ -19,5 +19,13 @@
 		"translators": [
 			"PoroCYon"
 		]
+	},
+	{
+		"id": "pirates",
+		"name": "Pirates",
+		"root": "/pirates",
+		"translators": [
+			"Captain O'Lulz"
+		]
 	}
 ]
