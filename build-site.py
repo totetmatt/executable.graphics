@@ -20,8 +20,7 @@ def crc32_file(filename):
 	return f"{buf:08x}"
 
 
-# WIP language feature
-enableLanguageDropdown = True
+# fail the build if localization strings are missing
 validateMissingLocalization = True
 
 
@@ -32,7 +31,9 @@ meteorikPublicNominationsOpen = False
 
 # load languages
 with open('languages/list.json') as file:
-	languages = [lang for lang in json.load(file) if lang.get('visible', True)]
+	languages = sorted(
+		[lang for lang in json.load(file) if lang.get('visible', True)],
+		key=lambda l: l['name'])
 
 
 # ensure no overlapping root folders
@@ -168,7 +169,6 @@ sharedTemplate = {
 	'meteoriks-juror-application-open': meteorikJurorApplicationOpen,
 	'meteoriks-nominations-open': meteorikPublicNominationsOpen,
 
-	'enable-language-dropdown': enableLanguageDropdown,
 	'languages': languages,
 	'translators': ', '.join(sorted(set(translators), key=str.casefold)),
 
@@ -195,7 +195,7 @@ for lang in languages:
 	with open(f"languages/{lang['id']}.json") as file:
 		langData = json.load(file)
 
-	def template_localize(text, render):
+	def localize(text):
 		keys = text.strip().split('.')
 		value = langData
 		for key in keys:
@@ -206,7 +206,10 @@ for lang in languages:
 				else:
 					return f"[[{text.strip()}]]"
 			value = value[key]
-		return render(value)
+		return value
+
+	def template_localize(text, render):
+		return render(localize(text))
 
 	langTemplate = { 'i18n': template_localize }
 
@@ -216,7 +219,8 @@ for lang in languages:
 				template = f,
 				partials_path = 'templates/',
 				data = sharedTemplate | langTemplate | {
-					'meta-description': "A curated gallery of 4K Executable Graphics works from the demoscene.",
+					'meta-subtitle': localize('nav.gallery'),
+					'meta-description': localize('meta.desc-gallery'),
 					'meta-twitter-card-type': "summary_large_image",
 					'currpage-canonical-filename' : '',
 					'page-gallery': True,
@@ -228,8 +232,8 @@ for lang in languages:
 				template = f,
 				partials_path = 'templates/',
 				data = sharedTemplate | langTemplate | {
-					'meta-subtitle': "Meteoriks",
-					'meta-description': "Nominees and winners of the 'Best Executable Graphics' Meteorik award.",
+					'meta-subtitle': localize('nav.meteoriks'),
+					'meta-description': localize('meta.desc-meteoriks'),
 					'meta-twitter-card-type': "summary",
 					'meta-image': meteorikProds[0]['image_url'],
 					'currpage-canonical-filename' : 'meteoriks.html',
@@ -242,8 +246,8 @@ for lang in languages:
 				template = f,
 				partials_path = 'templates/',
 				data = sharedTemplate | langTemplate | {
-					'meta-subtitle': "About",
-					'meta-description': "What is Executable Graphics?",
+					'meta-subtitle': localize('nav.about'),
+					'meta-description': localize('meta.desc-about'),
 					'meta-twitter-card-type': "summary",
 					'currpage-canonical-filename' : 'about.html',
 					'page-about': True }))
